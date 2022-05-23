@@ -34,6 +34,10 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'Home::index');
 $routes->get('users-list', 'UserCrud::index');
 $routes->get('users-form', 'UserCrud::create');
+$routes->post('form-submit', 'UserCrud::store');
+$routes->get('edit-view/(:num)', 'UserCrud::edit/$1');
+$routes->post('update', 'UserCrud::update');
+$routes->get('delete/(:num)', 'UserCrud::delete/$1');
 
 /*
  * --------------------------------------------------------------------

@@ -21,7 +21,7 @@
 <body>
     <div class="container mt-4">
         <div class="d-flex justify-content-end">
-            <a href="#">Add User</a>
+            <a href="users-form">Add User</a>
         </div>
         <?php 
             if(isset($_SESSION['msg'])){
@@ -45,6 +45,10 @@
                             <td><?php echo $user['id'] ?></td>
                             <td><?php echo $user['name'] ?></td>
                             <td><?php echo $user['email'] ?></td>
+                            <td>
+                                <a href="<?= base_url('/edit-view/'.$user['id']) ?>" class="btn btn-primary btn-sm">Edit</a>
+                                <a href="<?= base_url('/delete/'.$user['id']) ?>" class="btn btn-danger btn-sm">Delete</a>
+                            </td>
                         </tr>
                         <?php endforeach; ?>
                     <?php endif; ?>
